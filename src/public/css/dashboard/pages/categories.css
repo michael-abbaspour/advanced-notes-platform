@@ -1,0 +1,45 @@
+/**
+Stylesheet for Categories.
+ */
+
+.search-container {
+	display: flex;
+	width: min(calc(80% - 2rem), 50rem);
+	gap: 2rem;
+	margin-top: 1.75rem;
+}
+
+.search-filter-container {
+	display: grid;
+	grid-template-columns: fit-content(180px) minmax(450px, 1fr);
+	align-items: center;
+}
+
+.search {
+	display: flex;
+}
+
+.search > input[type="search"] {
+	border-top: 1px solid hsl(0, 0%, 42%);
+	border-bottom: 1px solid hsl(0, 0%, 42%);
+	border-right: 1px solid hsl(0, 0%, 42%);
+	border-radius: 0 0.25rem 0.25rem 0;
+}
+
+#add-new-category {
+	display: inline-flex;
+	align-items: center;
+	background-color: var(--secondary-color);
+	color: hsl(0, 0%, 100%);
+	padding: 0.25rem 1rem 0.25rem 1rem;
+	border-radius: 0.25rem;
+}
+
+.table-container {
+	width: min(calc(80% - 2rem), 60rem);
+	margin-top: 1.75rem;
+}
+
+#categories-table {
+	text-align: center;
+}

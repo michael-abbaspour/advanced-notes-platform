@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/dashboard/pages/notes/note.css">
+</head>
+<body>
+<div class="single-note-container">
+    <header>
+        <h1 class="note-title"><%= noteTitle %></h1>
+        <div class="header-subarea">
+            <div><span class="bold">Category:</span> <%= categoryName %></div>
+            <div><span class="bold">Last Edited:</span> <%= lastEdited %></div>
+        </div>
+    </header>
+    <main>
+        <p class="note-body">
+            <%= noteBody %>
+        </p>
+    </main>
+    <footer>
+        <a href="/dashboard/pages/notes/update-note/<%= noteIdParam %>">Edit</a>
+        <a href="/dashboard/pages/notes/delete-note/<%= noteIdParam %>">Delete</a>
+    </footer>
+</div>
+</body>
+</html>

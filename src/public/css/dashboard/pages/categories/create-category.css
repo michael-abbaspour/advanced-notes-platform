@@ -1,0 +1,47 @@
+/**
+Stylesheet for Create Category form.
+ */
+
+#create-category-form {
+	border: 1px solid hsl(0, 0%, 87%);
+	padding: 2rem;
+}
+
+#create-category-form > h1 {
+	text-align: center;
+}
+
+#create-category-form .form-group > textarea {
+	display: block;
+	width: 100%;
+	min-width: 350px;
+	min-height: 150px;
+	overflow: auto;
+}
+
+.form-footer > button {
+	width: 100%;
+	margin-top: 0.35rem;
+}
+
+.page-form-footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 0.75rem;
+}
+
+.form-group.success input {
+	border: 1px solid hsl(145, 63%, 46%);
+}
+
+.form-group.error input {
+	border: 1px solid hsl(348, 83%, 47%);
+}
+
+.form-group .message {
+	display: block;
+	margin-top: 0.2rem;
+	font-size: 0.8em;
+	color: hsl(348, 83%, 47%);
+}

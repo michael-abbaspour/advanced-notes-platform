@@ -1,0 +1,123 @@
+/**
+Stylesheet for the main Dashboard.
+ */
+
+.grid-container-3-area {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: 80px 1fr 80px;
+	grid-template-areas:
+		"header header header header header header"
+		"main main main main main main"
+		"footer footer footer footer footer footer";
+	min-height: 100vh;
+}
+
+.grid-container-3-area > header {
+	grid-area: header;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid hsl(0, 0%, 87%);
+	box-shadow: 0 0 10px hsl(0, 0%, 83%);
+}
+
+.logo-section {
+	display: flex;
+	align-items: center;
+	margin-left: 2rem;
+}
+
+.logo-section > span {
+	font-size: 1rem;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.dashboard-nav {
+	display: flex;
+	align-items: center;
+	gap: 2.5rem;
+	margin-right: 3rem;
+}
+
+.nav-list {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+}
+
+.nav-list-item {
+	list-style-type: none;
+	font-weight: bold;
+	position: relative;
+	padding: 1.5rem 1rem;
+	cursor: pointer;
+}
+
+.nav-list-item::after {
+	content: "";
+	width: 0;
+	height: 0.3rem;
+	border-radius: 0.2rem;
+	position: absolute;
+	left: 1rem;
+	bottom: 0.8rem;
+	background-color: hsl(340, 83%, 66%);
+	transition: width 200ms ease-in;
+}
+
+.nav-list-item:hover::after,
+.nav-list-item:focus::after {
+	width: 80%;
+}
+
+.nav-list-item:hover ul,
+.nav-list-item:focus ul {
+	opacity: 1;
+	visibility: visible;
+}
+
+.nav-list-item-dropdown {
+	position: absolute;
+	top: 4rem;
+	left: -1rem;
+	box-shadow: 0 0 10px hsl(0, 0%, 83%);
+	background-color: hsl(0, 0%, 100%);
+	border-radius: 0.2rem;
+	width: 10rem;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	opacity: 0;
+	visibility: hidden;
+	transition: opactiy 200ms ease-in-out;
+}
+
+.nav-list-item-dropdown li {
+	padding: 0.5rem 1rem;
+	border-radius: 0.2rem;
+	transition: background-color 200ms ease-in-out;
+}
+
+.nav-list-item-dropdown li:hover,
+.nav-list-item-dropdown li:focus {
+	background-color: hsl(340, 80%, 94%);
+}
+
+.nav-list-item-dropdown li a {
+	color: hsl(0, 0%, 0%);
+}
+
+.grid-container-3-area > main {
+	grid-area: main;
+	padding: 1.5rem;
+}
+
+.grid-container-3-area > footer {
+	grid-area: footer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top: 1px solid hsl(0, 0%, 87%);
+}

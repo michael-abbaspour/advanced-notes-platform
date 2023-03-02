@@ -1,0 +1,43 @@
+/**
+Stylesheet for a Single Note Post/Page.
+ */
+
+.single-note-container {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: 80px 1fr 80px;
+	grid-template-areas:
+		"header header header header header header"
+		"main main main main main main"
+		"footer footer footer footer footer footer";
+	min-height: 100svh;
+}
+
+.single-note-container > header {
+	grid-area: header;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 0.25rem;
+	border-bottom: 1px solid hsl(0, 0%, 87%);
+}
+
+.header-subarea {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.single-note-container > main {
+	grid-area: main;
+	display: flex;
+	justify-content: center;
+	margin-top: 0.25rem;
+}
+
+.single-note-container > footer {
+	grid-area: footer;
+	display: flex;
+	gap: 2rem;
+	justify-content: center;
+	align-items: center;
+}

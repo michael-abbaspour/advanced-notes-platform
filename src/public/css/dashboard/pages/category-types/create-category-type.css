@@ -1,0 +1,24 @@
+/**
+Stylesheet for Create Category Type form and page.
+ */
+
+#create-category-type-form {
+	border: 1px solid hsl(0, 0%, 87%);
+	padding: 2rem;
+}
+
+#create-category-type-form > h1 {
+	text-align: center;
+}
+
+.form-footer > button {
+	width: 100%;
+	margin-top: 0.35rem;
+}
+
+.page-form-footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 0.75rem;
+}

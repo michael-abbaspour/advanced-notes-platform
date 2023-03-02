@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/dashboard/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/dashboard/pages/notes.css">
+    <script src="/notes.js" type="module"></script>
+</head>
+<body>
+<div class="grid-container-3-area">
+    <header>
+        <div class="logo-section">
+            <a href="/dashboard"><img src="/note_alt_FILL1_wght400_GRAD0_opsz48.svg" alt="Main dashboard logo."></a>
+            <span>ANP</span>
+        </div>
+        <nav class="dashboard-nav">
+            <ul class="nav-list">
+                <li class="nav-list-item">Profile
+                    <ul class="nav-list-item-dropdown">
+                        <li><a href="/">Account</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list-item">Configure
+                    <ul class="nav-list-item-dropdown">
+                        <li><a href="/dashboard/pages/notes">Notes</a></li>
+                        <li><a href="/dashboard/pages/categories">Categories</a></li>
+                        <li><a href="/dashboard/pages/category-types">Category Types</a></li>
+                        <li><a href="/dashboard/pages/tags">Tags</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list-item"><a class="nav-list-button" href="/dashboard/pages/notes/create-note">+ New Note</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="search-container">
+            <div class="search-bar">
+                <label for="notes-search-bar"></label>
+                <input type="search" id="notes-search-bar" placeholder="Search by Title..." aria-label="Search through your Note(s) by their title(s)">
+            </div>
+            <a id="add-note-link" href="/dashboard/pages/notes/create-note">Add Note</a>
+        </div>
+        <div class="cards-container">
+            <div class="cards">
+                <% for (let i = 0; i < notes.length; i++) { %>
+                    <article class="card">
+                        <div class="card-header">
+                            <h4 class="card-title"><a href="/dashboard/pages/notes/note/<%= notes[i].id %>"><%= notes[i].note_title %></a></h4>
+                            <span class="note-category"><%= notes[i].category_name %></span>
+                        </div>
+                        <div class="card-content">
+                            <p class="note-body-text"><%= notes[i].note_body %></p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="note-tag"><%= notes[i].tag_name %></span>
+                        </div>
+                    </article>
+                <% } %>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <span class="copyright">&copy; Advanced Notes Platform</span>
+    </footer>
+</div>

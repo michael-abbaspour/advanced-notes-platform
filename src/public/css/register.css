@@ -1,0 +1,42 @@
+/**
+Register form and page styles.
+ */
+
+.form-heading {
+	text-align: center;
+}
+
+#register-form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	border: 1px solid hsl(0, 0%, 87%);
+	padding: 2.5rem;
+	min-width: 32rem;
+	max-width: 32rem;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.register-form-button > button {
+	margin-top: 0.45rem;
+}
+
+.form-group.success input {
+	border: 1px solid hsl(145, 63%, 46%);
+}
+
+.form-group.error input {
+	border: 1px solid hsl(348, 83%, 47%);
+}
+
+.form-group .message {
+	display: block;
+	margin-top: 0.2rem;
+	font-size: 0.8em;
+	color: hsl(348, 83%, 47%);
+}
+
+.form-footer {
+	text-align: center;
+	margin-top: 0.25rem;
+}

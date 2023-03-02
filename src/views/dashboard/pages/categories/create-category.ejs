@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Category</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/dashboard/pages/categories/create-category.css">
+    <script src="/createCategory.js" type="module"></script>
+</head>
+<body>
+<div class="form-container">
+    <form id="create-category-form" class="form-flex-col-gap-1" method="POST" action="/categories/create">
+        <h1>Add Category</h1>
+        <div class="form-group">
+            <label for="category_name"></label> Name
+            <input type="text" id="category_name" name="category_name">
+        </div>
+        <div class="form-group">
+            <label for="category_type_id"></label> Type
+            <select id="category_type_id" name="category_type_id">
+                <% for (let i = 0; i < categoryTypes.length; i++) {
+                    let selected = ( categoryTypes[i].type_name === "None" ) ? "selected" : "";
+                %>
+                    <option value="<%= categoryTypes[i].id %>" <%=selected %>> <%= categoryTypes[i].type_name %></option>
+                <% } %>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="category_description"></label> Description
+            <textarea id="category_description" name="category_description" maxlength="100"></textarea>
+        </div>
+        <div class="color-form-group">
+            <label for="color_id"></label> Color
+            <select id="color_id" name="color_id">
+                <% for (let i = 0; i < colors.length; i++) {
+                    let selected = ( colors[i].color_name === "Default Grey" ) ? "selected" : "";
+                %>
+                    <option value="<%= colors[i].id %>" <%=selected %>> <%= colors[i].color_name %></option>
+                <% } %>
+            </select>
+        </div>
+        <div class="form-footer">
+            <button id="create-category-btn" class="button-secondary" type="submit">Create</button>
+        </div>
+    </form>
+    <div class="page-form-footer">
+        <a href="/dashboard/pages/categories" class="footer-link">Return to Categories Dashboard</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Tag</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/dashboard/pages/tags/create-tag.css">
+    <script src="/tags/createTag.js" type="module"></script>
+</head>
+<body>
+<div class="form-container">
+    <form id="create-tag-form" class="form-flex-col-gap-1" method="POST" action="/tags/create">
+        <h1>Add Tag</h1>
+        <div class="form-group">
+            <label for="tag_name"></label> Name
+            <input type="text" id="tag_name" name="tag_name">
+        </div>
+        <div class="form-group">
+            <label for="tag_description"></label> Description
+            <textarea id="tag_description" name="tag_description" maxlength="80"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="color_id"></label> Color
+            <select id="color_id" name="color_id">
+                <% for (let i = 0; i < colors.length; i++) {
+                    let selected = ( colors[i].color_name === "Default Grey" ) ? "selected" : "";
+                %>
+                <option value="<%= colors[i].id %>" <%=selected %>> <%= colors[i].color_name %></option>
+                <% } %>
+            </select>
+        </div>
+        <div class="form-footer">
+            <button id="create-tag-btn" class="button-primary" type="submit">Create</button>
+        </div>
+    </form>
+    <div class="page-form-footer">
+        <a href="/dashboard/pages/tags" class="footer-link">Return to Tags Dashboard</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Types</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/dashboard/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/dashboard/pages/category-types.css">
+    <script src="/category-types.js" type="module"></script>
+</head>
+<body>
+<div class="grid-container-3-area">
+    <header>
+        <div class="logo-section">
+            <a href="/dashboard"><img src="/note_alt_FILL1_wght400_GRAD0_opsz48.svg" alt="Main dashboard logo."></a>
+            <span>ANP</span>
+        </div>
+        <nav class="dashboard-nav">
+            <ul class="nav-list">
+                <li class="nav-list-item">Profile
+                    <ul class="nav-list-item-dropdown">
+                        <li><a href="/">Account</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list-item">Configure
+                    <ul class="nav-list-item-dropdown">
+                        <li><a href="/dashboard/pages/notes">Notes</a></li>
+                        <li><a href="/dashboard/pages/categories">Categories</a></li>
+                        <li><a href="/dashboard/pages/category-types">Category Types</a></li>
+                        <li><a href="/dashboard/pages/tags">Tags</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list-item"><a class="nav-list-button" href="/dashboard/pages/notes/create-note">+ New Note</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="search-container">
+            <div class="search-bar">
+                <label for="category-types-search-bar"></label>
+                <input type="search" id="category-types-search-bar" placeholder="Search by name..." aria-label="Search through the Category Types table by name">
+            </div>
+            <a id="add-category-type-link" href="/dashboard/pages/category-types/create-category-type">Add Category Type</a>
+        </div>
+        <div class="table-container">
+            <table id="category-types-table">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% for (let i = 0; i < categoryTypes.length; i++) { %>
+                    <tr>
+                        <td><%= categoryTypes[i].type_name %></td>
+                        <td><a href="/dashboard/pages/category-types/update-category-type/<%= categoryTypes[i].id %>"><img class="object-inline-block-middle" src="/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="Edit" width="28" height="28"></a><span class="vertical-line"></span><a href="/dashboard/pages/category-types/delete-category-type/<%= categoryTypes[i].id %>"><img class="object-inline-block-middle" src="/delete_FILL0_wght400_GRAD0_opsz48.svg" alt="Delete" width="28" height="28"></a></td>
+                    </tr>
+                <% } %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <span class="copyright">&copy; Advanced Notes Platform</span>
+    </footer>
+</div>
+</body>
+</html>

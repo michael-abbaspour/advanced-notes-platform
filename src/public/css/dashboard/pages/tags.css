@@ -1,0 +1,33 @@
+/**
+Stylesheet for Tags view/page.
+ */
+
+.search-container {
+	display: flex;
+	width: min(calc(80% - 2rem), 50rem);
+	gap: 2rem;
+	margin-top: 1.75rem;
+}
+
+.search-bar > input[type="search"] {
+	width: 30rem;
+	max-width: 35rem;
+}
+
+#add-tags-link {
+	display: inline-flex;
+	align-items: center;
+	background-color: var(--primary-color-variant);
+	color: hsl(0, 0%, 100%);
+	padding: 0.25rem 1rem 0.25rem 1rem;
+	border-radius: 0.25rem;
+}
+
+.table-container {
+	width: min(calc(80% - 2rem), 60rem);
+	margin-top: 1.75rem;
+}
+
+#tags-table {
+	text-align: center;
+}

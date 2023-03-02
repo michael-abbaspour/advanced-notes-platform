@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/dashboard/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/dashboard/pages/categories.css">
+    <script src="/categories.js" type="module"></script>
+</head>
+<body>
+<div class="grid-container-3-area">
+    <header>
+        <div class="logo-section">
+            <a href="/dashboard"><img src="/note_alt_FILL1_wght400_GRAD0_opsz48.svg" alt="Main dashboard logo."></a>
+            <span>ANP</span>
+        </div>
+        <nav class="dashboard-nav">
+            <ul class="nav-list">
+                <li class="nav-list-item">Profile
+                    <ul class="nav-list-item-dropdown">
+                        <li><a href="/">Account</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list-item">Configure
+                    <ul class="nav-list-item-dropdown">
+                        <li><a href="/dashboard/pages/notes">Notes</a></li>
+                        <li><a href="/dashboard/pages/categories">Categories</a></li>
+                        <li><a href="/dashboard/pages/category-types">Category Types</a></li>
+                        <li><a href="/dashboard/pages/tags">Tags</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list-item"><a class="nav-list-button" href="/dashboard/pages/notes/create-note">+ New Note</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="search-container">
+            <div class="search-filter-container">
+                <div class="dropdown-wrapper">
+                    <button id="categories-types-dropdown-btn" class="dropdown-button-caret" type="button">
+                        All Category Types
+                    </button>
+                    <div id="category-types-dropdown" class="dropdown-menu">
+                        <ul class="dropdown-list">
+                            <li class="dropdown-list-item">All Category Types</li>
+                            <% for (let i = 0; i < categoryTypes.length; i++) { %>
+                                <li class="dropdown-list-item"><%= categoryTypes[i].type_name %></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+                <div class="search">
+                    <label for="categories-search-bar"></label>
+                    <input type="search" id="categories-search-bar" placeholder="Search by name or description..." aria-label="Search through the Categories table by name or description">
+                </div>
+            </div>
+            <a href="/dashboard/pages/categories/create-category" id="add-new-category">Add Category</a>
+        </div>
+        <div class="table-container">
+            <table id="categories-table">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col" id="category-type-table-col">Type</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% for (let i = 0; i < categories.length; i++) { %>
+                    <tr>
+                        <td><%= categories[i].category_name %></td>
+                        <td><%= categories[i].type_name %></td>
+                        <td><%= categories[i].category_description %></td>
+                        <td><div class="standard-circle object-inline-block-middle" style="background-color: <%= categories[i].color_code %>"></div></td>
+                        <td><a href="/dashboard/pages/categories/update-category/<%= categories[i].id %>"><img class="object-inline-block-middle" src="/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="Edit" width="28" height="28"></a><span class="vertical-line"></span><a href="/dashboard/pages/categories/delete-category/<%= categories[i].id %>"><img class="object-inline-block-middle" src="/delete_FILL0_wght400_GRAD0_opsz48.svg" alt="Delete" width="28" height="28"></a></td>
+                    </tr>
+                <% } %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <span class="copyright">&copy; Advanced Notes Platform</span>
+    </footer>
+</div>
+</body>
+</html>

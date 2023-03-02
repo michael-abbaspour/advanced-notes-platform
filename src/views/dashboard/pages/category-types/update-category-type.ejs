@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Category Type</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/dashboard/pages/category-types/update-category-type.css">
+</head>
+<body>
+<div class="form-container">
+    <form id="update-category-type-form" class="form-flex-col-gap-1" method="POST" action="/category-types/update/<%= categoryTypeIdParam %>">
+        <h1>Edit Category Type</h1>
+        <div class="form-group">
+            <label for="type_name"></label> Type Name
+            <input type="text" id="type_name" name="type_name" value="<%= typeName %>">
+        </div>
+        <div class="form-footer">
+            <button class="button-primary-full-width" type="submit">Update</button>
+        </div>
+    </form>
+    <div class="page-form-footer">
+        <a href="/dashboard/pages/category-types" class="footer-link">Return to Category Types Dashboard</a>
+    </div>
+</div>
+</body>
+</html>

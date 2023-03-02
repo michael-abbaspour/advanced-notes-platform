@@ -1,0 +1,10 @@
+*DS_Store
+.idea
+.env
+src/.env
+src/utilities/pagination.ts
+dist/**/*
+node_modules
+package-lock.json
+.eslintignore
+.eslintrc.json

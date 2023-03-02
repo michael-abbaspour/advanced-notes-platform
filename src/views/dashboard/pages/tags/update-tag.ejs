@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Tag</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/dashboard/pages/tags/update-tag.css">
+</head>
+<body>
+<div class="form-container">
+    <form id="update-tag-form" class="form-flex-col-gap-1" method="POST" action="/tags/update/<%= tagIdParam %>">
+        <h1>Edit Tag</h1>
+        <div class="form-group">
+            <label for="tag_name"></label> Name
+            <input type="text" id="tag_name" name="tag_name" value="<%= tagName %>">
+        </div>
+        <div class="form-group">
+            <label for="tag_description"></label> Description
+            <textarea id="tag_description" name="tag_description" maxlength="80"><%= tagDescription %></textarea>
+        </div>
+        <div class="form-group">
+            <label for="color_id"></label> Color
+            <select id="color_id" name="color_id">
+                <% for (let i = 0; i < colors.length; i++) {
+                    let selected = ( colors[i].id === colorId ) ? "selected" : "";
+                %>
+                <option value="<%= colors[i].id %>" <%=selected %>> <%= colors[i].color_name %></option>
+                <% } %>
+            </select>
+        </div>
+        <div class="form-footer">
+            <button class="button-primary" type="submit">Update</button>
+        </div>
+    </form>
+    <div class="page-form-footer">
+        <a href="/dashboard/pages/tags" class="footer-link">Return to Tags Dashboard</a>
+    </div>
+</div>
+</body>
+</html>

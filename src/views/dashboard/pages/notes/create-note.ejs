@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Note</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/dashboard/pages/notes/create-note.css">
+    <script src="/createNote.js" type="module"></script>
+</head>
+<body>
+    <div id="add-note-page-container">
+        <header>
+            <h1>Add New Note</h1>
+        </header>
+        <article>
+            <form id="create-note-form" method="POST" action="/notes/create">
+                <div class="row">
+                    <div class="input-group">
+                        <label for="note_title">Title</label>
+                        <input type="text" id="note_title" name="note_title">
+                        <span class="message"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group">
+                        <label for="category_id">Category</label>
+                        <select id="category_id" name="category_id">
+                            <% for (let i = 0; i < categories.length; i++) {
+                                let selected = ( categories[i].category_name === "Uncategorized" ) ? "selected" : "";
+                            %>
+                                <option value="<%= categories[i].id %>" <%=selected %>> <%= categories[i].category_name %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="tag_id">Tags</label>
+                        <select id="tag_id" name="tag_id">
+                            <% for (let i = 0; i < tags.length; i++) { %>
+                                <option value="<%= tags[i].id %>"> <%= tags[i].tag_name %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group">
+                        <label for="note_body">Body</label>
+                        <textarea id="note_body" name="note_body"></textarea>
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <button type="submit">Create Note</button>
+                    <button id="cancel">Cancel</button>
+                </div>
+            </form>
+        </article>
+    </div>
+</body>
+</html>

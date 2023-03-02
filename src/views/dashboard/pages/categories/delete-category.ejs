@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Category</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/dashboard/pages/categories/delete-category.css">
+</head>
+<body>
+<div class="form-container">
+    <form id="delete-category-form" class="form-flex-col-gap-1" method="POST" action="/categories/delete/<%= categoryIdParam %>">
+        <div class="form-group">
+            <label for="category_name"></label>
+            <input type="text" id="category_name" name="category_name" value="<%= categoryName %>" readonly>
+        </div>
+        <span>Are you sure you want to delete this Category?</span>
+        <div class="form-footer">
+            <button type="submit" class="button-primary">Delete</button>
+        </div>
+    </form>
+    <div class="page-form-footer">
+        <a href="/dashboard/pages/categories" class="footer-link">Return to Categories Dashboard</a>
+    </div>
+</div>
+</body>
+</html>

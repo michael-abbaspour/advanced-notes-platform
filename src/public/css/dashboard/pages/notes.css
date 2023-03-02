@@ -1,0 +1,57 @@
+/**
+Stylesheet for the Notes page.
+ */
+
+.search-container {
+	display: flex;
+	width: min(calc(80% - 2rem), 50rem);
+	gap: 2rem;
+	margin-bottom: 1rem;
+	padding-inline: 2rem;
+}
+
+.search-bar > input[type="search"] {
+	width: 30rem;
+	max-width: 35rem;
+}
+
+#add-note-link {
+	display: inline-flex;
+	align-items: center;
+	background-color: hsl(219, 79%, 66%);
+	color: hsl(0, 0%, 100%);
+	padding: 0.25rem 1rem 0.25rem 1rem;
+	border-radius: 0.25rem;
+}
+
+.cards-container {
+	max-width: 100rem;
+	margin-inline: auto;
+	padding-inline: 2rem;
+}
+
+.cards {
+	display: grid;
+	gap: 0.125rem;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.card {
+	border: 1px solid hsl(0, 0%, 87%);
+	margin: 0.5rem 0.5rem 0.2rem;
+	padding: 0.5rem;
+	box-shadow: 0 0.25rem 1rem rgb(0 0 0 / 0.1);
+}
+
+.card-header {
+	border-bottom: 1px solid hsl(0, 0%, 87%);
+}
+
+.card-title {
+	font-size: 1.25rem;
+	line-height: 1.1;
+}
+
+.card-footer {
+	border-top: 1px solid hsl(0, 0%, 87%);
+}

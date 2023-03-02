@@ -1,0 +1,48 @@
+/**
+Stylesheet for the Index/Home page.
+ */
+
+.container {
+	display: grid;
+	place-content: center;
+	gap: 1rem;
+	height: 100svh;
+	background-color: #fdfcfc;
+}
+
+.link-list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+}
+
+.link-list-item-bordered {
+	font-size: var(--fs-600);
+	font-weight: bold;
+	padding: 0.35rem 0.85rem 0.35rem 0.85rem;
+}
+
+li[data-home-list-item="register"] {
+	background-color: var(--primary-color);
+}
+
+li[data-home-list-item="register"] > a {
+	color: hsl(0, 0%, 100%);
+}
+
+li[data-home-list-item="login"] {
+	background-color: var(--secondary-color);
+}
+
+li[data-home-list-item="login"] > a {
+	color: hsl(0, 0%, 100%);
+}
+
+li[data-home-list-item="documentation"] {
+	background-color: hsl(300, 100%, 25%);
+}
+
+li[data-home-list-item="documentation"] > a {
+	color: hsl(0, 0%, 100%);
+}

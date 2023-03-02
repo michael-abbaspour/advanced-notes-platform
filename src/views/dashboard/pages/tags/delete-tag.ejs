@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Tag</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/dashboard/pages/tags/delete-tag.css">
+</head>
+<body>
+<div class="form-container">
+    <form id="delete-tag-form" class="form-flex-col-gap-1" method="POST" action="/tags/delete/<%= tagIdParam %>">
+        <div class="form-container">
+            <label for="tag_name"></label>
+            <input type="text" id="tag_name" name="tag_name" value="<%= tagName %>" readonly>
+        </div>
+        <span>Are you sure you want to delete this Tag?</span>
+        <div class="form-footer">
+            <button type="submit" class="button-primary">Delete</button>
+        </div>
+    </form>
+    <div class="page-form-footer">
+        <a href="/dashboard/pages/tags" class="footer-link">Return to Tags Dashboard</a>
+    </div>
+</div>
+</body>
+</html>

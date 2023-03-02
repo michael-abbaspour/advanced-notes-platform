@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/dashboard/dashboard.css">
+</head>
+<body>
+<div class="grid-container-3-area">
+    <header>
+        <div class="logo-section">
+            <a href="/dashboard"><img src="/note_alt_FILL1_wght400_GRAD0_opsz48.svg" alt="Main dashboard logo."></a>
+            <span>ANP</span>
+        </div>
+        <nav class="dashboard-nav">
+            <ul class="nav-list">
+                <li class="nav-list-item">Profile
+                    <ul class="nav-list-item-dropdown">
+                        <li><a href="/">Account</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list-item">Configure
+                    <ul class="nav-list-item-dropdown">
+                        <li><a href="/dashboard/pages/notes">Notes</a></li>
+                        <li><a href="/dashboard/pages/categories">Categories</a></li>
+                        <li><a href="/dashboard/pages/category-types">Category Types</a></li>
+                        <li><a href="/dashboard/pages/tags">Tags</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list-item"><a class="nav-list-button" href="/dashboard/pages/notes/create-note">+ New Note</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 class="welcome-user">
+        </h1>
+    </main>
+    <footer>
+        <span class="copyright">&copy; Advanced Notes Platform</span>
+    </footer>
+</div>
+</body>
+</html>

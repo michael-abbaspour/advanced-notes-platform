@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Category</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/dashboard/pages/categories/update-category.css">
+</head>
+<body>
+<div class="form-container">
+    <form id="update-category-form" class="form-flex-col-gap-1" method="POST" action="/categories/update/<%= categoryIdParam %>">
+        <h1>Edit Category</h1>
+        <div class="form-group">
+            <label for="category_name"></label> Name
+            <input type="text" id="category_name" name="category_name" value="<%= categoryName %>">
+        </div>
+        <div class="form-group">
+            <label for="category_type_id"></label> Type
+            <select id="category_type_id" name="category_type_id">
+                <% for (let i = 0; i < categoryTypes.length; i++) {
+                    let selected = ( categoryTypes[i].id === categoryTypeId ) ? "selected" : "";
+                %>
+                <option value="<%= categoryTypes[i].id %>" <%=selected %>> <%= categoryTypes[i].type_name %></option>
+                <% } %>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="category_description"></label> Description
+            <textarea id="category_description" name="category_description" maxlength="100"><%= categoryDescription %></textarea>
+        </div>
+        <div class="form-group">
+            <label for="color_id"></label> Color
+            <select id="color_id" name="color_id">
+                <% for (let i = 0; i < colors.length; i++) {
+                    let selected = ( colors[i].id === colorId ) ? "selected" : "";
+                %>
+                <option value="<%= colors[i].id %>" <%=selected %>> <%= colors[i].color_name %></option>
+                <% } %>
+            </select>
+        </div>
+        <div class="form-footer">
+            <button class="button-primary-full-width" type="submit">Update</button>
+        </div>
+    </form>
+    <div class="page-form-footer">
+        <a href="/dashboard/pages/categories" class="footer-link">Return to Categories Dashboard</a>
+    </div>
+</div>
+</body>
+</html>
