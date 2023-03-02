@@ -46,6 +46,14 @@ or
 
 if you would like to run your container in detached mode.
 
+### Transpiling TypeScript into JavaScript
+
+To transpile your TypeScript code into JavaScript, use the following command:
+
+>npm run build
+
+This will create a directory called `.dist` with all the proper .js files.
+
 ### Start the Server
 
 To start the server, run:
